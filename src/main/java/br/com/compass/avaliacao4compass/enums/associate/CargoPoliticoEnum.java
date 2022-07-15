@@ -1,6 +1,4 @@
-package br.com.compass.avaliacao4compass.enums;
-
-import lombok.Data;
+package br.com.compass.avaliacao4compass.enums.associate;
 
 public enum CargoPoliticoEnum {
     VEREADOR ("Vereador"),

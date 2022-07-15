@@ -9,19 +9,20 @@ import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 
 @Data
-public class RequestAssociateDTO {
+public class RequestPoliticalPartyDTO {
 
     @NotBlank
     @Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\\s]{3,}$")
     private String nome;
 
     @NotBlank
-    private String cargoPolitico;
+    @Pattern(regexp = "^[A-Z]{2,}$")
+    private String sigla;
+
+    @NotBlank
+    private String ideologia;
 
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-    private LocalDate dataNascimento;
-
-    @NotBlank
-    private String sexo;
+    private LocalDate dataFundacao;
 }

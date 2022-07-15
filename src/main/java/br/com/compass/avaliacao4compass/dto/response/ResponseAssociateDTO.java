@@ -18,6 +18,4 @@ public class ResponseAssociateDTO {
     private LocalDate dataNascimento;
 
     private String sexo;
-
-    //private PoliticalPartyEntity partido;
 }

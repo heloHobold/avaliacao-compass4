@@ -1,10 +1,10 @@
 package br.com.compass.avaliacao4compass.service;
 
 import br.com.compass.avaliacao4compass.dto.request.RequestAssociateDTO;
-import br.com.compass.avaliacao4compass.enums.CargoPoliticoEnum;
-import br.com.compass.avaliacao4compass.enums.SexoEnum;
-import br.com.compass.avaliacao4compass.exception.CargoPoliticoInvalidException;
-import br.com.compass.avaliacao4compass.exception.SexoInvalidException;
+import br.com.compass.avaliacao4compass.enums.associate.CargoPoliticoEnum;
+import br.com.compass.avaliacao4compass.enums.associate.SexoEnum;
+import br.com.compass.avaliacao4compass.exception.associate.CargoPoliticoInvalidException;
+import br.com.compass.avaliacao4compass.exception.associate.SexoInvalidException;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

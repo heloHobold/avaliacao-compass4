@@ -1,4 +1,4 @@
-package br.com.compass.avaliacao4compass.enums;
+package br.com.compass.avaliacao4compass.enums.associate;
 
 public enum SexoEnum {
     MASCULINO ("Masculino"),

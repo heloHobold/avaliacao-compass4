@@ -3,7 +3,7 @@ package br.com.compass.avaliacao4compass.service;
 import br.com.compass.avaliacao4compass.dto.request.RequestAssociateDTO;
 import br.com.compass.avaliacao4compass.dto.response.ResponseAssociateDTO;
 import br.com.compass.avaliacao4compass.entity.AssociateEntity;
-import br.com.compass.avaliacao4compass.exception.AssociateNotFoundException;
+import br.com.compass.avaliacao4compass.exception.associate.AssociateNotFoundException;
 import br.com.compass.avaliacao4compass.repository.AssociateRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
