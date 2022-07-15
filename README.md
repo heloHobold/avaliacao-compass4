@@ -28,7 +28,7 @@ Acessíveis em `localhost:8080`
 | `POST` | /partidos | Cadastra um novo partido. |
 | `GET` | /partidos | Retorna todos os partidos cadastrados. |
 | `GET` | /partidos/{id} | Retorna o registro de um partido. |
-| `GET` | /partidos/{id}/associados | Retorna o registro de todos os associados de um partido. |
+| `GET` | /partidos/{id}/associados | Retorna o registro de todos os associados do partido determinado. |
 | `PUT` | /partidos/{id} | Atualiza o registro de um partido. |
 | `DELETE` | /partidos/{id} | Remove o registro de um associado. |
 
