@@ -9,7 +9,9 @@ API desenvolvida como método de avaliação para a 4° Sprint
 - ModelMapper
 - Lombok 
 
-### Endpoints `ASSOCIADOS`
+## Endpoints 
+### `ASSOCIADOS`
+
 Acessíveis em `localhost:8080`
 | Método | Caminho | Descrição |
 |---|---|---|
@@ -21,7 +23,7 @@ Acessíveis em `localhost:8080`
 | `DELETE` | /associados/{id} | Remove o registro de um associado. |
 | `DELETE` | /associados/{id}/partidos/{id} | Remove o registro de um associado do partido determinado. |
 
-### Endpoints `PARTIDOS`
+### `PARTIDOS`
 Acessíveis em `localhost:8080`
 | Método | Caminho | Descrição |
 |---|---|---|
