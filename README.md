@@ -32,7 +32,7 @@ Acessíveis em `localhost:8080`
 | `DELETE` | /partidos/{id} | Remove o registro de um associado. |
 
 ### Filtros
-A aplicação permite aplicar os seguintes filtros para as ações de dos métodos `GET `:
+A aplicação permite aplicar os seguintes filtros para as ações de dos métodos `GET` :
 | Filtro| Exemplo de caminho |
 |---|---|
 | Exibir associados por cargo político | /associados?cargoPolitico=Governador|
