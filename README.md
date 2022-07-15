@@ -1,4 +1,4 @@
-# API DE CADASTRO DE PARTIDOS E SEUS ASSOCIADOS
+# API de cadastros de partidos e seus associados
 API desenvolvida como método de avaliação para a 4° Sprint
 
 ### Dependências:
