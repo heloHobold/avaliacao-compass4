@@ -12,11 +12,11 @@ import java.time.LocalDate;
 public class RequestPoliticalPartyDTO {
 
     @NotBlank
-    @Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\\s]{3,}$")
+    @Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\\s]{3,}$", message = ": Nome deve conter somente e pelo menos três letras.")
     private String nome;
 
     @NotBlank
-    @Pattern(regexp = "^[A-Z]{2,}$")
+    @Pattern(regexp = "^[A-Z]{2,}$", message = ": Sigla deve conter somente e pelo menos duas letras todas em maiúsculo.")
     private String sigla;
 
     @NotBlank

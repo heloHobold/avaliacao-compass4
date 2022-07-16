@@ -1,6 +1,7 @@
 package br.com.compass.avaliacao4compass.controller;
 
 import br.com.compass.avaliacao4compass.dto.request.RequestPoliticalPartyDTO;
+import br.com.compass.avaliacao4compass.dto.response.ResponseAssociateDTO;
 import br.com.compass.avaliacao4compass.dto.response.ResponsePoliticalPartyDTO;
 import br.com.compass.avaliacao4compass.service.PoliticalPartyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,12 @@ public class PoliticalPartyController {
     @GetMapping("/{id}")
     public ResponseEntity<ResponsePoliticalPartyDTO> getPoliticalParty(@PathVariable Long id){
         ResponsePoliticalPartyDTO response = politicalPartyService.getById(id);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/{partidoId}/associados")
+    public ResponseEntity<List<ResponseAssociateDTO>> listAllAssociates(@PathVariable Long partidoId){
+        List<ResponseAssociateDTO> response = politicalPartyService.getAllAssociates(partidoId);
         return ResponseEntity.ok(response);
     }
 

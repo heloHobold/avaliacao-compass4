@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class RequestAssociateDTO {
 
     @NotBlank
-    @Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\\s]{3,}$")
+    @Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\\s]{3,}$", message = ": Nome deve conter somente e pelo menos três letras.")
     private String nome;
 
     @NotBlank

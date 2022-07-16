@@ -1,5 +1,7 @@
 package br.com.compass.avaliacao4compass.handler;
 
+import br.com.compass.avaliacao4compass.exception.associate.AssociateNotLinkedException;
+import br.com.compass.avaliacao4compass.exception.associate.AssociateAlreadyLinkedException;
 import br.com.compass.avaliacao4compass.exception.politicalParty.IdeologiaInvalidException;
 import br.com.compass.avaliacao4compass.exception.associate.AssociateNotFoundException;
 import br.com.compass.avaliacao4compass.exception.associate.CargoPoliticoInvalidException;
@@ -32,6 +34,8 @@ public class GlobalHandlerException extends ResponseEntityExceptionHandler {
 
     private static final String ERROR_INTERNAL = "Erro interno no servidor.";
     private static final String POLITICAL_PARTY_NOT_FOUND = "Partido não encontrado.";
+    private static final String ASSOCIATE_ALREADY_LINKED_INVALID = "O associado já está vinculado a um partido.";
+    private static final String ASSOCIATE_NOT_LINKED = "O associado informado ainda não está vinculado a nenhum partido.";
 
     @ExceptionHandler(value = {AssociateNotFoundException.class})
     protected ResponseEntity<ErrorMassage> handlerAssociateNotFound(AssociateNotFoundException ex) {
@@ -56,6 +60,16 @@ public class GlobalHandlerException extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value = {IdeologiaInvalidException.class})
     protected ResponseEntity<ErrorMassage> handlerIdeologiaInvalid(IdeologiaInvalidException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorMassage(IDEOLOGIA_INVALID));
+    }
+
+    @ExceptionHandler(value = {AssociateAlreadyLinkedException.class})
+    protected ResponseEntity<ErrorMassage> handlerAssociateAlreadyLinked(AssociateAlreadyLinkedException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorMassage(ASSOCIATE_ALREADY_LINKED_INVALID));
+    }
+
+    @ExceptionHandler(value = {AssociateNotLinkedException.class})
+    protected ResponseEntity<ErrorMassage> handlerAssociateNotLinked(AssociateNotLinkedException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorMassage(ASSOCIATE_NOT_LINKED));
     }
 
     @ExceptionHandler(value = {Exception.class})

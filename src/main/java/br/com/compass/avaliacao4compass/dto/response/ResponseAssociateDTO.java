@@ -1,5 +1,6 @@
 package br.com.compass.avaliacao4compass.dto.response;
 
+import br.com.compass.avaliacao4compass.entity.PoliticalPartyEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
@@ -18,4 +19,6 @@ public class ResponseAssociateDTO {
     private LocalDate dataNascimento;
 
     private String sexo;
+
+    private PoliticalPartyEntity partido;
 }

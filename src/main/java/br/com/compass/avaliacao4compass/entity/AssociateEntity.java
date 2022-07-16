@@ -1,5 +1,6 @@
 package br.com.compass.avaliacao4compass.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,4 +20,7 @@ public class AssociateEntity {
     private LocalDate dataNascimento;
 
     private String sexo;
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JsonManagedReference
+    private PoliticalPartyEntity partido;
 }

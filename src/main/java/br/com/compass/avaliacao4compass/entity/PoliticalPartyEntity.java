@@ -1,10 +1,10 @@
 package br.com.compass.avaliacao4compass.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,4 +21,8 @@ public class PoliticalPartyEntity {
     private String ideologia;
 
     private LocalDate dataFundacao;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "partido")
+    @JsonBackReference
+    private List<AssociateEntity> associados;
 }

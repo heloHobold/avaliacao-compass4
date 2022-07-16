@@ -1,6 +1,7 @@
 package br.com.compass.avaliacao4compass.controller;
 
 import br.com.compass.avaliacao4compass.dto.request.RequestAssociateDTO;
+import br.com.compass.avaliacao4compass.dto.request.RequestAssociateToPoliticalParty;
 import br.com.compass.avaliacao4compass.dto.response.ResponseAssociateDTO;
 import br.com.compass.avaliacao4compass.service.AssociateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,16 @@ public class AssociateController {
 
     @PostMapping
     public ResponseEntity<ResponseAssociateDTO> addAssociate (@RequestBody @Valid RequestAssociateDTO associateDTO, UriComponentsBuilder uriComponentsBuilder){
-        ResponseAssociateDTO save = associateService.save(associateDTO, uriComponentsBuilder);
+        ResponseAssociateDTO save = associateService.save(associateDTO);
         URI uri = uriComponentsBuilder.path("associados/{id}").buildAndExpand(save.getId()).toUri();
         return ResponseEntity.created(uri).body(save);
     }
 
-    //POST - associados/partidos
+    @PostMapping("/partidos")
+    public ResponseEntity<Void> addAssociateToPoliticalParty (@RequestBody @Valid RequestAssociateToPoliticalParty request){
+        associateService.addAssociateToPoliticalParty(request);
+        return ResponseEntity.status(201).build();
+    }
 
     @GetMapping
     public ResponseEntity<List<ResponseAssociateDTO>> listAllAssociates(@RequestParam(required = false) String cargoPolitico,
@@ -52,7 +57,9 @@ public class AssociateController {
         return ResponseEntity.noContent().build();
     }
 
-    //DELETE - associados/{id}/partidos/{id}
-
-
+    @DeleteMapping("/{idAssociate}/partidos/{idPoliticalParty}")
+    public ResponseEntity<Void> deleteAssociateByPoliticalParty(@PathVariable Long idAssociate, @PathVariable Long idPoliticalParty){
+        associateService.deleteByPoliticalParty(idAssociate, idPoliticalParty);
+        return ResponseEntity.noContent().build();
+    }
 }
